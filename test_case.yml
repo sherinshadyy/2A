@@ -15,8 +15,10 @@ jobs:
         - name: install from requirements.txt
           run: pip install -r requirements.txt
 
-        - name: run test cases in job test
-          run: python -m unitest test.py
+        - name: install dependencies
+          run: pip install -r requirements.txt
+          name: run tests
+          run: python -m unittest test.py
 
     deploy:
       needs: testing
